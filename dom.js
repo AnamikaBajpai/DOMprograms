@@ -94,11 +94,11 @@
 //  var lastItem = document.querySelector('.list-group').lastElementChild;
 //  lastItem.style.color ='blue';
 
- var secondItem = document.querySelector('.list-group :nth-child(2)');
- secondItem.style.backgroundColor ='green';
+//  var secondItem = document.querySelector('.list-group :nth-child(2)');
+//  secondItem.style.backgroundColor ='green';
 
-  var thirdItem = document.querySelector('.list-group :nth-child(3)');
- thirdItem.style.visibility ='hidden';
+//   var thirdItem = document.querySelector('.list-group :nth-child(3)');
+//  thirdItem.style.visibility ='hidden';
 
 
 
@@ -113,17 +113,122 @@
 //  console.log(titles);
 //   titles[0] = textContent ="Hello";
 
- var odd = document.querySelectorAll('#items :nth-child(odd)');
+//  var odd = document.querySelectorAll('#items :nth-child(odd)');
  
 
- var even = document.querySelectorAll('#items :nth-child(even)');
+//  var even = document.querySelectorAll('#items :nth-child(even)');
 
- for(var i = 0;i< odd.length; i++) {
-    odd[i].style.backgroundColor ="green";
+//  for(var i = 0;i< odd.length; i++) {
+//     odd[i].style.backgroundColor ="green";
    
-    even[i].style.backgroundColor ="#f4f4f4";
+//     even[i].style.backgroundColor ="#f4f4f4";
 
 
-}
-  var secondItem = document.querySelector('#items :nth-child(2)');
-  secondItem.style.color ='green';
+// }
+//   var secondItem = document.querySelector('#items :nth-child(2)');
+//   secondItem.style.color ='green';
+
+
+//Travering DOM ----------
+
+var itemList = document.querySelector('#items');
+
+//PrentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor ='#f4f4f4';
+// console.log(itemList.parentNode.parentNode.parentNode);
+
+//ParentElement -------(interchangable)
+
+// console.log(itemList.parentElement);
+//  itemList.parentElement.style.backgroundColor ='#f4f4f4';
+//  console.log(itemList.parentElement.parentElement.parentElement);
+
+//Childnode -------(not use)--------
+
+//console.log(itemList.childNodes);
+
+//children-----(use)---------
+
+//console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor='yellow';
+
+//Firstchild------------------------------(not use)
+
+//console.log(itemList.firstChild);
+
+//firstelement child ---------------(use)
+//console.log(itemList.firstElementChild);
+
+
+//lastchild -----------(not use)
+
+//console.log(itemList.lastChild);
+
+//lastElementchild -------------------(use)
+
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent='hello 4'
+
+//nextsibling----------------------(not use)
+
+//console.log(itemList.nextSibling);
+
+//nextelementsibling---------------------(use)
+
+//console.log(itemList.nextElementSibling);
+
+//previoussibling ---------(not use)
+
+//console.log(itemList.previousSibling);
+
+//previouselementsibling-------------------(use)
+//console.log(itemList.previousElementSibling);
+//itemList.previousElementSibling.style.color='green';
+
+
+
+
+
+
+//Create elements ----------
+
+var newDiv = document.createElement('div');
+//Add class ---------
+
+newDiv.className ='hello';
+
+//Add id--------
+newDiv.id = 'hello1';
+
+// Add attribute ------
+newDiv.setAttribute('title','Hello Div');
+
+//create text node -----
+
+var newDivText = document.createTextNode('HEllo word');
+
+//Add text to div -------
+
+newDiv.appendChild(newDivText);
+
+
+
+
+
+//before itemlister---------
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+console.log(newDiv);
+newDiv.style.fontsize ='20px';
+container.insertBefore(newDiv,h1);
+
+
+// before item 1 -----------
+
+let liFirst = document.createElement('li');
+liFirst.innerHTML ='HEllo word';
+items.prepend(liFirst);
